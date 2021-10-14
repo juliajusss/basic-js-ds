@@ -1,5 +1,7 @@
-const { NotImplementedError } = require("../extensions/index.js");
+"use strict";
 
+var _require = require("../extensions/index.js"),
+    NotImplementedError = _require.NotImplementedError;
 /**
  * Given a singly linked list of integers l and an integer k,
  * remove all elements from list l that have a value equal to k.
@@ -19,9 +21,11 @@ const { NotImplementedError } = require("../extensions/index.js");
  * }
  */
 
+
 module.exports = function removeKFromList(l, k) {
-  let current = l;
-  let previous = null;
+  var current = l;
+  var previous = null;
+
   while (current != null) {
     if (current.value == k) {
       if (previous == null) {
@@ -30,8 +34,10 @@ module.exports = function removeKFromList(l, k) {
         previous.next = current.next;
       }
     }
+
     previous = current;
     current = current.next;
   }
+
   return l;
 };
